@@ -142,16 +142,12 @@ rule merge_sequences:
         merged="data/sequences/all_hits.fasta",
     log:
         "logs/merge_sequences.log",
-    run:
-        from Bio import SeqIO
-        records = []
-        for fasta in input.fastas:
-            for rec in SeqIO.parse(fasta, "fasta"):
-                records.append(rec)
-        with open(output.merged, "w") as fh:
-            SeqIO.write(records, fh, "fasta")
-        with open(log[0], "w") as lf:
-            lf.write(f"Merged {len(input.fastas)} files -> {len(records)} sequences\n")
+    conda:
+        "envs/extract_sequences.yaml"
+    shell:
+        r"""
+        cat {input.fastas} > {output.merged} 2> {log}
+        """
 
 rule setup_netsolp:
     output:
