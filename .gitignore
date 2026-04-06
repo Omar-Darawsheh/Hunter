@@ -1,0 +1,12 @@
+# Generated data and outputs
+data/
+predictions_output/
+logs/
+external/
+
+# Snakemake working directory
+.snakemake/
+
+# Python cache
+__pycache__/
+*.pyc
