@@ -1,4 +1,4 @@
-# Hunter — Enzyme Property Prediction Pipeline
+# Enzyme_Hunter — Enzyme Property Prediction Pipeline
 
 A Snakemake pipeline that takes PDB structure files and predicts key biochemical properties of enzymes:
 
@@ -11,12 +11,9 @@ The pipeline also generates a multiple sequence alignment (MUSCLE), a neighbor-j
 
 ## Requirements
 
-- Linux (tested on CentOS/RHEL)
-- [Conda](https://docs.conda.io/) or [Mamba](https://mamba.readthedocs.io/)
-- [Snakemake](https://snakemake.readthedocs.io/) ≥ 7.0
-- Internet access (for first run — downloads external tools and model weights automatically)
+TBA
 
-## Quick Start
+## Install
 
 ```bash
 git clone https://github.com/Omar-Darawsheh/Hunter.git
@@ -24,8 +21,7 @@ cd Hunter
 chmod +x run.sh
 ./run.sh /path/to/your/pdb/files/
 ```
-
-Or run Snakemake directly with more control:
+Or run Snakemake directly. For example:
 
 ```bash
 snakemake --config pdb_dir=/path/to/your/pdb/files/ --use-conda -j 4
@@ -75,10 +71,6 @@ These are installed into the `external/` directory and managed by Snakemake rule
 ## Configuration
 
 The pipeline is configured via the command line. Optional settings can be added to `config/config.yaml`:
-
-```yaml
-netsolp_model: "ESM1b"   # Options: ESM12, ESM1b, Distilled, Both
-```
 
 ## License
 
