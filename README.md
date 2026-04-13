@@ -42,22 +42,6 @@ If any input has multiple unique chains, two files are produced instead:
 - **`all_predictions_structure.tsv`** — one row per PDB (pH at structure level; other properties per-chain marked as NA for multi-chain entries)
 - **`all_predictions_chains.tsv`** — one row per unique chain of multi-chain PDBs
 
-### Predicted Properties
-
-| Column | Description | Tool |
-|---|---|---|
-| `predicted_solubility` | Predicted protein solubility | NetSolP |
-| `predicted_usability` | Predicted protein usability | NetSolP |
-| `predicted_ph_opt` | Predicted optimal pH | pHoptNN |
-| `predicted_topt_C` | Predicted optimal temperature (°C) | Seq2Topt |
-| `predicted_tm_C` | Predicted melting temperature (°C) | Seq2Topt |
-
-### Additional Outputs
-
-- `data/alignments/muscle.afa` — MUSCLE multiple sequence alignment
-- `data/trees/nj_tree.nwk` — Neighbor-joining tree (Newick format, compatible with Jalview)
-- `data/trees/nj_tree.png` — Tree rendered as PNG
-
 ## External Tools
 
 On the first run, the pipeline automatically downloads and sets up:
